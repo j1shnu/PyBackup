@@ -316,11 +316,24 @@ dbdir = StringVar()
 pospath = StringVar()
 psql, pg_dump, code, progress, DbName, DbPort, pg, pgPass = None, None, None, None, None, None, None, None
 
+
+#############################################
+# SPECIFY PATH TO SAVE PROPERTY FILE
+
+# For Windows egs:- C:\\Path\\conf
+WindowsPath = " "
+
+# For Linux egs:- /home/user/conf/          
+LinuxPath = " "
+
+##############################################
+
+
 # PROPERTY FILE DEFINING
 if system() == 'Linux':
-    propfile = "/home/jishnu/PYTHON/db.prop"
+    propfile = LinuxPath
 elif system() == 'Windows':
-    propfile = "C:\DATA\Pytest\db.prop"
+    propfile = WindowsPath
 
 # APP CALLING
 if db_details() == 0:
